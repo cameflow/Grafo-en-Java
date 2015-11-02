@@ -1,36 +1,36 @@
 import java.util.*;
 
 public class Graph{
-  int id;
-  List<Node> nodes = new LinkedList();
-  List<Edge> edges = new LinkedList();
+    private int id;
+    private List<Node> mNodes;
+    private List<Edge> mEdges;
 
-  //---------------Constructors------------//
-  public Graph()
-  {
 
-  }
+    public Graph(){
+        mNodes = new LinkedList();
+        mEdges = new LinkedList();
+    }
 
-  //----------Functions to set data------------//
-  public void addEdge(Node o, Node d, int w)
-  {
-    Edge e = new Edge(o,d,w);
-    edges.add(e);
-  }
-  public void addNode(int i, String s)
-  {
-    Node n = new Node(i,s);
-    nodes.add(n);
-  }
 
-  //---------------Functions to get data---------------//
-  int getNodes()
-  {
-    return nodes.size();
-  }
-  int getEdges()
-  {
-    return edges.size();
-  }
+    public void addEdge(Node o, Node d, int w){
+        Edge e = new Edge(o,d,w);
+        edges.add(e);
+    }
+
+    public void addNode(Node n){
+        nodes.add(n);
+    }
+
+    // TODO: getNodes returns the amount of nodes not the nodes. Rename function
+    // or change implementation.
+    public int getNodes(){
+        return nodes.size();
+    }
+
+    // TODO: getEdges returns the amount of eges not the nodes. Rename function
+    // or change implementation.
+    public int getEdges(){
+        return edges.size();
+    }
 
 }

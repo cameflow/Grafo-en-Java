@@ -1,18 +1,14 @@
-import java.util.*;
-
 public class Node{
     private int mId;
     private boolean mVisited;
     private String mData;
-    private List edgeList;
-
-    private static int sCounter = 0;
+   
+    private static int sCounter = 0; 
 
     public Node(){
         this("");
-        edgeList = new LinkedList();
     }
-
+   
     public Node(String data){
         this.mId = ++sCounter;
         this.mData = data;
@@ -20,30 +16,22 @@ public class Node{
     }
 
     public void setVisited(boolean visited){
-        this.mVisited = visited;
+        this.mVisited = visited; 
     }
-
+   
     public void setData(String data){
         this.mData = data;
     }
-
+   
     public int getId(){
         return mId;
     }
-
+   
     public boolean isVisited(){
         return mVisited;
     }
-
+    
     public String returnData(){
         return mData;
-    }
-
-    public void addEdge(Edge e){
-      edgeList.add(e);
-    }
-
-    public int getEdges(){
-      return edgeList.size();
     }
 }
