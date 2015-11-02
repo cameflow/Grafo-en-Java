@@ -1,15 +1,17 @@
+//Class node of the graph
+//Id -->
 
-public class node{
+public class Node{
    int id;
    boolean visited = false;
    String data;
 
    //---------------Constructors------------//
-   public node()
+   public Node()
    {
 
    }
-   public node(int i, String da)
+   public Node(int i, String da)
    {
      id = i;
      data = da;
@@ -17,11 +19,11 @@ public class node{
    }
 
    //----------Functions to set variables------------//
-   void setId(int a)
+   public void setId(int a)
    {
      id = a;
    }
-   void setVisited()
+   public void setVisited()
    {
      if (visited)
      {
@@ -32,21 +34,21 @@ public class node{
        visited = true;
      }
    }
-   void setData(String dat)
+   public void setData(String dat)
    {
      data = dat;
    }
 
    //---------------Functions to get variables---------------//
-   int getId()
+   public int getId()
    {
      return id;
    }
-   boolean getVisited()
+   public boolean getVisited()
    {
      return visited;
    }
-   String returnData()
+   public String returnData()
    {
      return data;
    }
