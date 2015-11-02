@@ -10,7 +10,7 @@ public class Edge{
     public Edge(Node origin, Node destination, int weight){
         this.origin = origin;
         this.destination = destination;
-        this.weight = wweight;
+        this.weight = weight;
     }
 
     public void setOrigin(Node node){
