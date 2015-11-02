@@ -1,46 +1,40 @@
 public class Edge{
-  Node origin;
-  Node destiny;
-  int weight;
+    private Node origin;
+    private Node destination;
+    private int weight;
 
-  //---------------Constructors------------//
-  public Edge()
-  {
+    public Edge(){
+        origin = new Node(); 
+    }
+    
+    public Edge(Node origin, Node destination, int weight){
+        this.origin = origin;
+        this.destination = destination;
+        this.weight = wweight;
+    }
 
-  }
-  public Edge(Node o, Node d, int w)
-  {
-    origin = o;
-    destiny = d;
-    weight = w;
-  }
-
-  //----------Functions to set variables------------//
-  public void setOrigin(Node o)
-  {
-    origin = o;
-  }
-  public void setDestiny(Node d)
-  {
-    destiny = d;
-  }
-  public void setWeight(int w)
-  {
-    weight = w;
-  }
-
-  //---------------Functions to get variables---------------//
-  public Node getOrigin()
-  {
-    return origin;
-  }
-  public Node getDestiny()
-  {
-    return destiny;
-  }
-  public Node getWeight()
-  {
-    return weight;
-  }
+    public void setOrigin(Node node){
+        this.origin = node;
+    }
+    
+    public void setDestination(Node node){
+        this.destination = node;
+    }
+    
+    public void setWeight(int weight){
+        this.weight = weight;
+    }
+  
+    public Node getOrigin(){
+        return origin;
+    }
+  
+    public Node getDestination(){
+        return destination;
+    }
+    
+    public int getWeight(){
+        return weight;
+    }
 
 }
