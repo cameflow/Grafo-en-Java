@@ -1,10 +1,12 @@
 //Class node of the graph
 //Id -->
+import java.util.*;
 
 public class Node{
    int id;
    boolean visited = false;
    String data;
+   List<Edge> edgeList = new LinkedList();
 
    //---------------Constructors------------//
    public Node()
@@ -37,6 +39,10 @@ public class Node{
    public void setData(String dat)
    {
      data = dat;
+   }
+   public void addEdge(Edge e)
+   {
+     edgeList.add(e);
    }
 
    //---------------Functions to get variables---------------//
