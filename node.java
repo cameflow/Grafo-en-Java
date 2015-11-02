@@ -4,7 +4,19 @@ public class node{
    boolean visited = false;
    String data;
 
+   //---------------Constructors------------//
+   public node()
+   {
 
+   }
+   public node(int i, String da)
+   {
+     id = i;
+     data = da;
+     visited = false;
+   }
+
+   //----------Functions to set variables------------//
    void setId(int a)
    {
      id = a;
@@ -24,6 +36,8 @@ public class node{
    {
      data = dat;
    }
+
+   //---------------Functions to get variables---------------//
    int getId()
    {
      return id;
