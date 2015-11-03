@@ -8,6 +8,7 @@ public class Node{
 
     private static int sCounter = 0;
 
+    //-----------Constructors----------//
     public Node(){
         this("");
         edgeList = new LinkedList();
@@ -19,31 +20,35 @@ public class Node{
         this.mVisited = false;
     }
 
+    //-----------Setters-------------//
     public void setVisited(boolean visited){
         this.mVisited = visited;
     }
-
     public void setData(String data){
         this.mData = data;
     }
 
+    //-------------Getters----------//
     public int getId(){
         return mId;
     }
-
     public boolean isVisited(){
         return mVisited;
     }
-
     public String returnData(){
         return mData;
     }
 
-    public void addEdge(Edge e){
-      edgeList.add(e);
+
+    public void addEdge(Edge e){ //Adds an edge to the edge list
+        edgeList.add(e);
     }
 
-    public int getEdges(){
-      return edgeList.size();
+    public int getEdges(){  //Returns how many edges does the node has
+        return edgeList.size();
+    }
+    public void removeEdge(Edge e){
+        int delPos = edgeList.lastIndexOf(e);
+        edgeList.remove(delPos);
     }
 }
