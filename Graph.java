@@ -69,9 +69,11 @@ public class Graph{
         String output = "";
         Node node2;
         boolean found = false;
+
         node.setVisited(true);
         stack.push(node);
         output = Integer.valueOf(node.getId()).toString();
+
         while(!stack.empty()){
           node2 = stack.peek();
           found = false;
@@ -88,8 +90,69 @@ public class Graph{
               stack.pop();
           }
         }
-
         System.out.print("DFS: " + output + "\n");
+    }
+
+
+    public int[][] createAdjMatrix(){
+        int size = mNodes.size();
+        int[][] adjMatrix = new int[size][size];
+        int weight = 99999;
+        for (Node node : mNodes){
+            for (Node node2 : mNodes){
+              for(Edge edge : mEdges){
+                  if(edge.getOrigin().getId()==node.getId() && edge.getDestination().getId() == node2.getId()){
+                      weight = edge.getWeight();
+                  }
+              }
+              if(node.getId() == node2.getId()){
+                  weight = 0;
+              }
+              adjMatrix[node.getId()-1][node2.getId()-1] = weight;
+              System.out.print(weight + " ");
+              weight = 99999;
+            }
+            System.out.println();
+        }
+        return adjMatrix;
+    }
+
+    public void floydWarshall(){
+      int size = mNodes.size();
+      int[][] adjMatrix = new int[size][size];
+      int weight = 99999;
+      for (Node node : mNodes){
+          for (Node node2 : mNodes){
+            for(Edge edge : mEdges){
+                if(edge.getOrigin().getId()==node.getId() && edge.getDestination().getId() == node2.getId()){
+                    weight = edge.getWeight();
+                }
+            }
+            if(node.getId() == node2.getId()){
+                weight = 0;
+            }
+            adjMatrix[node.getId()-1][node2.getId()-1] = weight;
+            System.out.print(weight + " ");
+            weight = 99999;
+          }
+          System.out.println();
+      }
+      System.out.print("\n");
+      System.out.print("\n");
+
+        for (int k = 0; k < size; k++){
+            for (int i = 0; i < size; i++){
+                for (int j = 0; j < size; j++){
+                    if (adjMatrix[i][j] > adjMatrix[i][k] + adjMatrix[k][j]){
+                        adjMatrix[i][j] = adjMatrix[i][k] + adjMatrix[k][j];
+                    }
+                    System.out.print(adjMatrix[i][j]+ " ");
+                }
+                System.out.print("\n");
+            }
+            System.out.print("\n");
+            System.out.print("\n");
+        }
     }
 
 }

@@ -14,15 +14,15 @@ class Test{
       Node h = new Node();
       Node s = new Node();
       Edge ab = new Edge(a,b,3);
-      Edge as = new Edge(a,s,2);
+      Edge as = new Edge(a,s,6);
       Edge sc = new Edge(s,c,2);
-      Edge sg = new Edge(s,g,2);
+      Edge sg = new Edge(s,g,4);
       Edge cd = new Edge(c,d,2);
-      Edge ce = new Edge(c,e,2);
+      Edge ce = new Edge(c,e,6);
       Edge cf = new Edge(c,f,2);
-      Edge gf = new Edge(g,f,2);
+      Edge gf = new Edge(g,f,8);
       Edge gh = new Edge(g,h,2);
-      Edge eh = new Edge(e,h,2);
+      Edge eh = new Edge(e,h,4);
 
       grafo.addNode(a);
       grafo.addNode(b);
@@ -53,8 +53,10 @@ class Test{
       System.out.print("Number of nodes in graph: " + nodes + "\n");
       System.out.print("Number of edges in graph: " + edges + "\n");
 
-      grafo.bfs(a);
-      grafo.resetNodes();
-      grafo.dfs(a);
+      grafo.floydWarshall();
+
+      // grafo.bfs(a);
+      // grafo.resetNodes();
+      // grafo.dfs(a);
   }
 }
