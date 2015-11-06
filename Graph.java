@@ -40,6 +40,8 @@ public class Graph{
     public void resetNodes(){
         for(Node node : mNodes){
             node.setVisited(false);
+            node.setNodeDistance(99999);
+            node.setParentId(0);
         }
     }
 

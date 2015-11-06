@@ -51,20 +51,5 @@ public class Node implements Comparable{
 		//return compareDistance - this.distance;
 	}
 
-  // public static Comparator<Node> NodeDistanceComparator = new Comparator<Node>() {
-  //
-	//     public int compare(Node node1, Node node2) {
-  //
-	//       int nodeDistance1 = node1.getNodeDistance();
-	//       int nodeDistance2 = node2.getNodeDistance();
-  //
-	//       //ascending order
-	//       return nodeDistance1.compareTo(node2);
-  //
-	//       //descending order
-	//       //return fruitName2.compareTo(fruitName1);
-	//     }
-  //
-	// };
 
 }
