@@ -53,7 +53,8 @@ class Test{
       System.out.print("Number of nodes in graph: " + nodes + "\n");
       System.out.print("Number of edges in graph: " + edges + "\n");
 
-      grafo.floydWarshall();
+      //grafo.floydWarshall();
+      grafo.dijkstra(a);
 
       // grafo.bfs(a);
       // grafo.resetNodes();

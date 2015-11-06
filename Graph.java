@@ -155,4 +155,50 @@ public class Graph{
         }
     }
 
+
+    public void dijkstra(Node originNode){
+        int size = mNodes.size();
+        List<Integer> parents = new LinkedList<Integer>();
+        ArrayList<Node> notVisited = new ArrayList<Node>();
+        List<Node> visited = new LinkedList<Node>();
+
+        //Put all nodes in notVisited Queue
+        for(Node node : mNodes)
+        {
+          notVisited.add(node);
+        }
+
+        originNode.setNodeDistance(0);
+
+        //Do cicle while notVisited has elements
+        while(!notVisited.isEmpty()){
+            Collections.sort(notVisited);
+            Node n = notVisited.get(0);
+            notVisited.remove(0);
+            visited.add(n);
+
+            Node sourceNode = n;
+
+            //Iterate through all edges to find the ones that exit the sourceNode
+            for(Edge edge : mEdges){
+                if(edge.getOrigin() == sourceNode){
+                    Node destinationNode = edge.getDestination(); //get the destination node
+                    int edgeWeight = edge.getWeight(); //Get the weight of the edge
+
+                    if(destinationNode.getNodeDistance() > sourceNode.getNodeDistance() + edgeWeight){
+                        destinationNode.setNodeDistance(sourceNode.getNodeDistance() + edgeWeight);
+                        destinationNode.setParentId(sourceNode.getId());
+                    }
+                }
+            }
+        }
+
+        for(Node node : mNodes){
+          System.out.print(node.getParentId()+ " -> " + node.getId() + " distance: " + node.getNodeDistance() + "\n");
+        }
+
+
+
+    }
+
 }
