@@ -198,8 +198,25 @@ public class Graph{
         for(Node node : mNodes){
           System.out.print(node.getParentId()+ " -> " + node.getId() + " distance: " + node.getNodeDistance() + "\n");
         }
+    }
 
+    public void bellmanFord(Node originNode){
+        int size = mNodes.size();
 
+        originNode.setNodeDistance(0);
+
+        for (int i = 0;i < size; i++ ) {
+          for (Edge edge : mEdges){
+              if(edge.getOrigin().getNodeDistance() + edge.getWeight() < edge.getDestination().getNodeDistance()){
+                  edge.getDestination().setNodeDistance(edge.getOrigin().getNodeDistance() + edge.getWeight());
+                  edge.getDestination().setParentId(edge.getOrigin().getId());
+              }
+          }
+        }
+
+        for(Node node : mNodes){
+          System.out.print(node.getParentId()+ " -> " + node.getId() + " distance: " + node.getNodeDistance() + "\n");
+        }
 
     }
 

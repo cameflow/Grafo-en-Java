@@ -54,7 +54,8 @@ class Test{
       System.out.print("Number of edges in graph: " + edges + "\n");
 
       //grafo.floydWarshall();
-      grafo.dijkstra(a);
+      //grafo.dijkstra(a);
+      grafo.bellmanFord(a);
 
       // grafo.bfs(a);
       // grafo.resetNodes();
