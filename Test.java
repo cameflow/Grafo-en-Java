@@ -53,12 +53,40 @@ class Test{
       System.out.print("Number of nodes in graph: " + nodes + "\n");
       System.out.print("Number of edges in graph: " + edges + "\n");
 
-      //grafo.floydWarshall();
-      //grafo.dijkstra(a);
+      System.out.print("FLOYD-WARSHALL \n");
+      long startTime = System.nanoTime();
+      grafo.floydWarshall();
+      long stopTime = System.nanoTime();
+      long elapsedTime = stopTime - startTime;
+      System.out.println(elapsedTime + "\n");
+      grafo.resetNodes();
+      System.out.print("DIJKSTRA \n");
+      startTime = System.nanoTime();
+      grafo.dijkstra(a);
+      stopTime = System.nanoTime();
+      elapsedTime = stopTime - startTime;
+      System.out.println(elapsedTime + "\n");
+      grafo.resetNodes();
+      System.out.print("BELLMAN-FORD \n");
+      startTime = System.nanoTime();
       grafo.bellmanFord(a);
-
-      // grafo.bfs(a);
-      // grafo.resetNodes();
-      // grafo.dfs(a);
+      stopTime = System.nanoTime();
+      elapsedTime = stopTime - startTime;
+      System.out.println(elapsedTime + "\n");
+      grafo.resetNodes();
+      System.out.print("BFS \n");
+      startTime = System.nanoTime();
+      grafo.bfs(a);
+      stopTime = System.nanoTime();
+      elapsedTime = stopTime - startTime;
+      System.out.println(elapsedTime + "\n");
+      grafo.resetNodes();
+      System.out.print("DFS \n");
+      startTime = System.nanoTime();
+      grafo.dfs(a);
+      stopTime = System.nanoTime();
+      elapsedTime = stopTime - startTime;
+      System.out.println(elapsedTime + "\n");
+      grafo.resetNodes();
   }
 }

@@ -1,0 +1,6 @@
+Tiempos de ejecución en Java:
+FLOYD-WARSHALL --> 15 ns
+DIJKSTRA --> 1 ns
+BELLMAN-FORD --> 0 ns
+BFS --> 0 ns
+DFS --> 1 ns

@@ -202,17 +202,20 @@ public class Graph{
 
     public void bellmanFord(Node originNode){
         int size = mNodes.size();
+        boolean relax = true;
 
         originNode.setNodeDistance(0);
 
-        for (int i = 0;i < size; i++ ) {
+        while(relax){
+          relax = false;
           for (Edge edge : mEdges){
               if(edge.getOrigin().getNodeDistance() + edge.getWeight() < edge.getDestination().getNodeDistance()){
                   edge.getDestination().setNodeDistance(edge.getOrigin().getNodeDistance() + edge.getWeight());
                   edge.getDestination().setParentId(edge.getOrigin().getId());
+                  relax = true;
               }
           }
-        }
+      }
 
         for(Node node : mNodes){
           System.out.print(node.getParentId()+ " -> " + node.getId() + " distance: " + node.getNodeDistance() + "\n");
